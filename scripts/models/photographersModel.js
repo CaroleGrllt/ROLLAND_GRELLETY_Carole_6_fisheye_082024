@@ -14,7 +14,10 @@ export async function getPhotographers() {
 }
 
 export async function getPhotographerInfo(idPhotographer) {
-
+    const data = await getData()
+    const dataPhotographers = data.photographers 
+    let photographer = dataPhotographers.find((data) => data.id == idPhotographer)
+    return photographer
 }
 
 export async function getMediasByPhotographer(idPhotographer) {

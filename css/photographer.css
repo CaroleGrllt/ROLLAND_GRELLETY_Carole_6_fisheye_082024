@@ -2,10 +2,32 @@
     display: none;
 }
 
-.photograph-header {
+.photographer-information {
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 50px;
+}
+
+.name-photographer {
+    font-weight: 400;
+    font-size: 64px;
+    color: #D3573C;
+    margin: 0;
+}
+
+.about-container img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100%;
 }
 
 .contact_button {
@@ -20,6 +42,12 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+
+
+
+
+
 
 .modal {
     border-radius: 5px;

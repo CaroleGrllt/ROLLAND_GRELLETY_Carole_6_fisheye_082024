@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr" dir="ltr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
@@ -9,13 +9,15 @@
   </head>
   <body>
     <header>
-      <img src="assets/icons/logo.png" class="logo" />
+      <a aria-label="Lien vers la page d'accueil" href="./index.html" >
+        <img role="img" src="assets/icons/logo.png" class="logo" alt="Fisheye Home Page"/>
+      </a>
     </header>
+
     <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
+      <div class="photographer-information"></div>
     </main>
+
     <div id="contact_modal">
 			<div class="modal">
 				<header>
@@ -31,7 +33,8 @@
 				</form>
 			</div>
 		</div>
-    <script src="/scripts/pages/photographer.js"></script>
+
+    <script src="/scripts/pages/photographer.js" type="module"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>
