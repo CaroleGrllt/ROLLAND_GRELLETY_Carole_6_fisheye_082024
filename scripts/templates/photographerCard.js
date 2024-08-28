@@ -34,7 +34,6 @@ export default function photographerTemplate(data) {
         cost.classList.add('price')
         cost.textContent = price +"€ / jour"
 
-
         article.appendChild(link)
         link.appendChild(img)
         link.appendChild(h2)
@@ -42,13 +41,13 @@ export default function photographerTemplate(data) {
         article.appendChild(line)
         article.appendChild(cost)
 
-
         return (article);
     }
 
+    
     function getPhotographerInfo() {
 
-        const container = document.createElement( 'div' )
+        const container = document.createElement( 'section' )
         container.classList.add('about-container')
 
         const txtContainer = document.createElement('div')
@@ -70,6 +69,7 @@ export default function photographerTemplate(data) {
 
         const btn = document.createElement('button')
         btn.setAttribute('onclick', 'displayModal()')
+        btn.setAttribute('aria-label', 'Ouvrir le formulaire de contact')
         btn.classList.add('contact_button')
         btn.textContent = "Contactez-moi"
         const img = document.createElement( 'img' );
@@ -83,7 +83,6 @@ export default function photographerTemplate(data) {
         txtContainer.appendChild(line)
         container.appendChild(btn)
         container.appendChild(img)
-
 
         return (container);
     }
