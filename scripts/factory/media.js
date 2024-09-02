@@ -1,9 +1,9 @@
 import displayByMedia from "../templates/mediaGrid.js"
 
-export async function mediaFactory(datasMedia, identity) {
+export default function mediaFactory(datasMedia, identity) {
 
     const name = identity.name
-    
+
     const content = datasMedia.map(data => {
         if(data.image) {
             const mediaContent = `

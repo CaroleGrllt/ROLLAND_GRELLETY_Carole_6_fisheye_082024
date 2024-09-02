@@ -38,6 +38,7 @@ export default function displayByMedia(data, mediaContent) {
         const i = document.createElement('i')
         i.classList.add('fa-solid')
         i.classList.add('fa-heart')
+        i.classList.add('fa-heart-grid')
         i.setAttribute('aria-hidden', 'true')
 
         article.appendChild(link)

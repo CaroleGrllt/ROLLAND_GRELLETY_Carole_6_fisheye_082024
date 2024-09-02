@@ -1,6 +1,7 @@
 import { getPhotographerInfo, getMediasByPhotographer } from '../models/photographersModel.js'
 import photographerTemplate from '../templates/photographerCard.js'
-import { mediaFactory } from '../factory/media.js';
+import mediaFactory from '../factory/media.js';
+import displayLikes from '../utils/likes.js';
 
 // RECUPERATION DE LA SECTION PERMETTANT D'AFFICHER LES DONNEES
 const photographersSection = document.querySelector(".photographer-container");
@@ -20,9 +21,12 @@ photographersSection.appendChild(photographerInfoDOM); // affichage du composant
 
 // CREATION DE LA PARTIE MEDIA DE LA PAGE PHOTOGRAPHE
 
-const medias = await mediaFactory(photographerMediaById, photographerInfoById) //envoi des informations media à la factory + récupération du composant selon fonction demandée (tableau)
+const medias = mediaFactory(photographerMediaById, photographerInfoById) //envoi des informations media à la factory + récupération du composant selon fonction demandée (tableau)
 const section = document.createElement('section')
 section.classList.add('works-container')
 photographersSection.appendChild(section)
 medias.forEach((media) => section.appendChild(media)) // affichage des composants sur la page photographe
 
+const likes = displayLikes(photographerInfoById, photographerMediaById)
+const likesDOM = likes.updateLikes()
+photographersSection.appendChild(likesDOM)

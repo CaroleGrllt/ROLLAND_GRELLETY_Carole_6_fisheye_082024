@@ -72,6 +72,7 @@ export default function photographerTemplate(data) {
         btn.setAttribute('aria-label', 'Ouvrir le formulaire de contact')
         btn.classList.add('contact_button')
         btn.textContent = "Contactez-moi"
+        
         const img = document.createElement( 'img' );
         img.setAttribute('aria-hidden', 'true')
         img.setAttribute("src", picture )
