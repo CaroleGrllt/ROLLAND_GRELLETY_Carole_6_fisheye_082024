@@ -4,15 +4,16 @@ body {
     font-family: "DM Sans", sans-serif;
     margin: 0 auto;
     max-width: 1440px;
+    position: relative;
 }
 
 
-header {
+.main-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 90px;
+    min-height: 90px;
 }
 
 .photographer_title {

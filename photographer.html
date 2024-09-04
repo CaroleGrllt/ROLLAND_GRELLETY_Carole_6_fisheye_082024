@@ -10,30 +10,50 @@
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye - photographe </title>
   </head>
-  <body>
-    <header>
+  <body id="body">
+    <header class="main-header" role="banner" aria-label="En-tête de la page">
       <a aria-label="Lien vers la page d'accueil" href="./index.html" >
         <img role="img" src="assets/icons/logo.png" class="logo" alt="Fisheye Home Page"/>
       </a>
     </header>
 
-    <main id="main" class="photographer-container">
+    <main id="main-photographer" aria-hidden="false" class="photographer-container">
     </main>
 
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+    <div id="contact_modal" aria-hidden="true" role="dialog" >
+			<div class="modal" aria-describedby="modalTitle">
+				<header class="modal-header">
+          <h2 id="modalTitle" class="modal-title">Contactez-moi <br> <span aria-label="Nom du photographe" class="form-name"></span></h2>
+          <button  class="close-modal">
+            <img alt="fermer la modale" src="assets/icons/close.svg" onclick="closeModal()" />
+          </button>
         </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
+        <form name="contact" action="index.html" method="get" onsubmit="return validate();">
+
+          <div class="formData firstname" data-error="Entrez votre prénom" data-error-visible="false">
+            <label for="first">Prénom</label><br>
+            <input class="text-control" type="text" id="firstname" name="firstname">
+          </div>
+
+          <div class="formData lastname" data-error="Entrez votre nom de famille" data-error-visible="false">
+            <label for="last">Nom</label><br>
+            <input class="text-control" type="text" id="lastname" name="lastname">
+          </div>
+
+          <div class="formData email" data-error="Entrez une adresse email valide" data-error-visible="false">
+            <label for="email">E-mail</label><br>
+            <input class="text-control" type="email" id="email" name="email">
+          </div>
+
+          <div class="formData message" data-error="Entrez votre message" data-error-visible="false">
+            <label for="message">Votre message</label><br>
+            <textarea class="text-control" id="message" name="message" rows="10"></textarea>
+          </div>
+
+          <input class="btn-submit button" type="submit" value="Envoyer">
+          <div class="success"></div>
+        </form>
+      </div>
 		</div>
     <script src="/scripts/pages/photographer.js" type="module"></script>
     <script src="/scripts/utils/contactForm.js"></script>

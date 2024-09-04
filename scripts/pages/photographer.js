@@ -3,6 +3,7 @@ import photographerTemplate from '../templates/photographerCard.js'
 import mediaFactory from '../factory/media.js';
 import displayLikes from '../utils/likes.js';
 
+
 // RECUPERATION DE LA SECTION PERMETTANT D'AFFICHER LES DONNEES
 const photographersSection = document.querySelector(".photographer-container");
 
@@ -30,3 +31,7 @@ medias.forEach((media) => section.appendChild(media)) // affichage des composant
 const likes = displayLikes(photographerInfoById, photographerMediaById)
 const likesDOM = likes.updateLikes()
 photographersSection.appendChild(likesDOM)
+
+// CREATION MODALE DE CONTACT
+document.querySelector('.form-name').textContent = photographerInfoById.name
+

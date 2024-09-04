@@ -1,6 +1,5 @@
 export default function photographerTemplate(data) {
     const { name, id, tagline, city, country, price, portrait } = data;
-
     const picture = `assets/photographers/${portrait}`;
 
     function getUserCardDOM() {

@@ -132,7 +132,14 @@ aside {
 /***** SECTION MODALE CONTACT PHOTOGRAPHE *****/
 
 #contact_modal {
+    position: absolute;
+    margin: 0;
     display: none;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color:rgba(255,255,255, 0.6);
 }
 
 .modal {
@@ -144,22 +151,26 @@ aside {
     align-items: center;
     justify-content: space-between;
     padding: 35px;
-    margin: auto;
+    margin: 70px auto;
 }
 
-.modal header {
+.modal .modal-header {
+    display: flex;
+    align-items: flex-start;
     justify-content: space-between;
     width: 100%;
+    margin-bottom: 40px;
 }
 
-.modal header img {
-    cursor: pointer;
+.close-modal {
+    background-color: #DB8876;
+    border: none;
 }
 
-.modal header h2 {
+.modal .modal-header h2 {
     font-size: 64px;
     font-weight: normal;
-    text-align: center;
+    margin: 0;
 }
 
 form {
@@ -175,11 +186,7 @@ form label {
 }
 
 form div {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    align-items: self-start;
-    margin-bottom: 26px;
 }
 
 form input {
@@ -187,4 +194,44 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+    font-size: 20px;
+}
+
+form textarea {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: "DM Sans", sans-serif;
+}
+
+.formData[data-error]::after {
+    content: attr(data-error);
+    font-size: 1em;
+    color: #e54858;
+    margin-top: 7px;
+    opacity: 0;
+    transition: 0.3s;
+    line-height: 0.5;
+  }
+  
+.formData[data-error-visible="true"]::after {
+    opacity: 1;
+}
+
+.formData[data-error-visible="true"] .text-control {
+    border: 2px solid #e54858;
+}
+
+.btn-submit {
+    margin-top: 20px;
+    width: 170px;
+    height: 69px;
+    background-color: #901C1C;
+    color: white;
+    font-size: 18px;
+}
+
+.success p {
+    color: green;
 }
