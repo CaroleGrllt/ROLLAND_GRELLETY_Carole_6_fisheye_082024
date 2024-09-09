@@ -16,7 +16,7 @@ export default function mediaFactory(datasMedia, identity) {
 
         else if(data.video) {
             const mediaContent = `   
-                <video aria-label="${data.title}">
+                <video controls aria-label="${data.title}">
                     <source src="assets/images/${name}/${data.video}" type="video/mp4">
                 </video>
             `

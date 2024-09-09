@@ -20,11 +20,11 @@
     <main id="main-photographer" aria-hidden="false" class="photographer-container">
     </main>
 
-    <div id="contact_modal" aria-hidden="true" role="dialog" >
-			<div class="modal" aria-describedby="modalTitle">
+    <div id="contact_modal" aria-hidden="true" aria-modal="false" role="dialog" aria-describedby="modalTitle">
+			<div class="modal">
 				<header class="modal-header">
           <h2 id="modalTitle" class="modal-title">Contactez-moi <br> <span aria-label="Nom du photographe" class="form-name"></span></h2>
-          <button  class="close-modal">
+          <button class="close-modal">
             <img alt="fermer la modale" src="assets/icons/close.svg" onclick="closeModal()" />
           </button>
         </header>
@@ -55,6 +55,25 @@
         </form>
       </div>
 		</div>
+
+    <div class="lightbox" aria-hidden="true" aria-modal="false" role="dialog">
+      <div class="lightbox-container">
+        <button class="close-lightbox">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <button class="previous-button">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <div class="photo-container">
+          <figure></figure>
+          <figcaption></figcaption>
+        </div>
+        <button class="next-button">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
     <script src="/scripts/pages/photographer.js" type="module"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>

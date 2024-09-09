@@ -1,4 +1,4 @@
-// SELECTION ELEMENTS DOM
+// DOM ELEMENTS
 const body           = document.getElementById("body")
 const main           = document.getElementById("main-photographer")
 const contactModal   = document.getElementById("contact_modal")
@@ -14,17 +14,41 @@ const messageInput   = document.getElementById("message")
 const messageError   = document.querySelector(".message")
 const successMessage = document.querySelector(".success")
 
-// FONCTIONS
-//-----Ouverture modale
+
+  //EVENTLISTENERS
+  //-----Click events
+  firstInput.addEventListener("change", function() {
+    isValidInput(firstnameRegexp,firstInput,firstError);
+  });
+  lastInput.addEventListener("change", function() {
+    isValidInput(lastnameRegexp,lastInput,lastError);
+  });
+  emailInput.addEventListener("change", function() {
+    isValidInput(emailRegexp,emailInput,emailError);
+  });
+  messageInput.addEventListener("change", function() {
+    isValidInput(textRegex,messageInput,messageError);
+  });
+
+  //-----key events
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape') {
+        closeModal()
+    }
+})
+
+
+// FUNCTIONS
+//-----open modal
 function displayModal() {
 	contactModal.style.display = "block";
-    contactModal.setAttribute('aria-hidden', 'false')
-    contactModal.setAttribute('aria-modal', 'true')
-    main.setAttribute('aria-hidden', 'true')
-    closeBtn.focus();
+  contactModal.setAttribute('aria-hidden', 'false')
+  contactModal.setAttribute('aria-modal', 'true')
+  main.setAttribute('aria-hidden', 'true')
+  closeBtn.focus();
 }
 
-//-----Nettoyage du formulaire
+//-----clean form after closing/sending
 function clearInputs() {
     firstInput.value = ""
     firstError.setAttribute('data-error-visible', 'false')
@@ -36,7 +60,7 @@ function clearInputs() {
     messageError.setAttribute('data-error-visible', 'false')
   }
   
-//-----Fermeture modale
+//-----close modal
 function closeModal() {
     contactModal.style.display = "none";
     clearInputs()
@@ -46,22 +70,7 @@ function closeModal() {
     main.setAttribute('aria-hidden', 'false')
 }
 
-body.addEventListener('keydown', (e) => {
-    if(e.keyCode === 27 ) {
-        closeModal()
-    }
-})
-
-closeBtn.addEventListener('keydown', (e) => {
-    if(e.keyCode === 13 ) {
-        closeModal()
-    }
-})
-
-
-
-
-//-----Validation du formulaire
+//-----Form validation
 const firstnameRegexp = /^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]{1,}$/;
 const lastnameRegexp = /^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]{1,}$/;
 const emailRegexp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -109,18 +118,3 @@ function isValidInput(regex,input,error) {
         return false
       }
   }
-
-  //EVENTLISTENER
-  firstInput.addEventListener("change", function() {
-    isValidInput(firstnameRegexp,firstInput,firstError);
-  });
-  lastInput.addEventListener("change", function() {
-    isValidInput(lastnameRegexp,lastInput,lastError);
-  });
-  emailInput.addEventListener("change", function() {
-    isValidInput(emailRegexp,emailInput,emailError);
-  });
-  messageInput.addEventListener("change", function() {
-    isValidInput(textRegex,messageInput,messageError);
-  });
-  

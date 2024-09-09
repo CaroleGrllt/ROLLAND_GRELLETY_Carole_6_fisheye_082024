@@ -27,12 +27,14 @@ export default function displayByMedia(data, mediaContent) {
 
         const span = document.createElement('span')
         span.setAttribute('aria-label', 'nombre de likes')
+        span.setAttribute('data-id', id)
         span.classList.add('likeNbr')
-        span.textContent = likes
+        // span.textContent = likes
 
         const btn = document.createElement('button')
         btn.setAttribute('type', 'button')
         btn.setAttribute('aria-label', `Aimer la photo ${title}`)
+        btn.setAttribute('data-id', id)
         btn.classList.add('likeBtn')
 
         const i = document.createElement('i')
