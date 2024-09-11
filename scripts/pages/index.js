@@ -1,5 +1,5 @@
 import { getPhotographers } from '../models/photographersModel.js'
-import photographerTemplate from '../templates/photographerCard.js'
+import photographerTemplate from '../templates/photographerTemplate.js'
 
     const photographersSection = document.querySelector(".photographer_section");
 

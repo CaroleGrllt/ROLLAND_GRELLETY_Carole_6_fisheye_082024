@@ -1,21 +1,19 @@
 import { getPhotographerInfo, getMediasByPhotographer } from '../models/photographersModel.js'
-import photographerTemplate from '../templates/photographerCard.js'
+import photographerTemplate from '../templates/photographerTemplate.js'
 import mediaFactory from '../factory/media.js';
-import displayLikes from '../utils/likes.js';
 import lightboxTemplate from '../utils/lightbox.js';
 
 
 // RECUPERATION DE LA SECTION PERMETTANT D'AFFICHER LES DONNEES
 const photographersSection = document.querySelector(".photographer-container");
-const lightboxSection = document.querySelector(".lightbox")
 
 // RECUPERATION DE L'ID DU PHOTOGRAPHE PASSE EN PARAMETRE DANS L'URL
 let idParam = new URLSearchParams(document.location.search)
 let photographerId = idParam.get('id')
 
 // RECUPERATION DES INFORMATIONS (IDENTITE ET TRAVAUX) DU PHOTOGRAPHE EN FONCTION ID
-const photographerInfoById = await getPhotographerInfo(photographerId)
-const photographerMediaById = await getMediasByPhotographer(photographerId)
+export const photographerInfoById = await getPhotographerInfo(photographerId)
+export const photographerMediaById = await getMediasByPhotographer(photographerId)
 
 // CREATION DE LA PARTIE IDENTITE DE LA PAGE PHOTOGRAPHE
 const photographer = photographerTemplate(photographerInfoById); //envoi + réception infos du photographe au template
@@ -30,7 +28,7 @@ photographersSection.appendChild(section)
 medias.forEach((media) => section.appendChild(media)) // affichage des composants sur la page photographe
 
 //CREATION ENCART TOTAL LIKES
-const likes = displayLikes(photographerInfoById, photographerMediaById)
+const likes = photographerTemplate(photographerInfoById, photographerMediaById)
 const likesDOM = likes.displayAside()
 photographersSection.appendChild(likesDOM)
 
@@ -39,3 +37,4 @@ document.querySelector('.form-name').textContent = photographerInfoById.name
 
 // CREATION LIGHTBOX -- envoi infos nécessaires
 const lightbox = lightboxTemplate(photographerMediaById, photographerInfoById)
+

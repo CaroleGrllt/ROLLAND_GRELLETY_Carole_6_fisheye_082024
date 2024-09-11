@@ -108,7 +108,7 @@ function isValidInput(regex,input,error) {
             "Prénom : " + firstInput.value + " / ", 
             "Nom : " + lastInput.value + " / ", 
             "Email : " + emailInput.value + " / ", 
-            "Date de naissance : " + messageInput.value 
+            "Message : " + messageInput.value 
         )
 
         successMessage.innerHTML= '<p>Merci. Votre message a bien été envoyé. Vous pouvez fermer le formulaire. </p>'

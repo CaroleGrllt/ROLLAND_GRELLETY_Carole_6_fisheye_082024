@@ -41,6 +41,7 @@ export default function lightboxTemplate(dataMedias, dataPhotographer) {
             case 'Escape':
                 closeLightbox();
                 break;
+        
             case 'ArrowLeft':
                 displayPrevMedia();
                 break;
