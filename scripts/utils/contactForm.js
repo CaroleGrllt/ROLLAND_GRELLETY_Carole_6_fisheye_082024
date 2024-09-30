@@ -31,8 +31,8 @@ const successMessage = document.querySelector(".success")
   });
 
   //-----key events
-  document.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape') {
+  closeBtn.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' || e.key === 'Enter' || e.code === 'Space') {
         closeModal()
     }
 })
@@ -82,6 +82,7 @@ function isValidInput(regex,input,error) {
       return false;
     } else {
       error.setAttribute('data-error-visible', 'false')
+      input.classList.add('success-message')
       return true;
     }
   }

@@ -18,6 +18,7 @@
     </header>
 
     <main id="main-photographer" aria-hidden="false" class="photographer-container">
+      <section class="about-container"></section>
       <section class="filter">
         <h2 class="filter-title">Trier par</h2>
         <div class="dropdown-container">
@@ -34,14 +35,14 @@
             </button>
             <div class="dropdown-content" aria-hidden="true">
               <ul aria-hidden="true">
-                <li class="option" role="option">
-                  <button id="popularite" type="button" tabindex="" aria-label="Trier par popularité" value="popularite">Popularité</button>
+                <li class="option" role="listbox">
+                  <button class="filter-button" id="popularite" type="button" aria-label="Trier par popularité" value="popularite">Popularité</button>
                 </li>
-                <li class="option" role="option">
-                  <button id="date" type="button" tabindex="" aria-label="Trier par date" value="date">Date</button>
+                <li class="option" role="listbox">
+                  <button class="filter-button" id="date" type="button" aria-label="Trier par date" value="date">Date</button>
                 </li>
-                <li class="option" role="option">
-                  <button id="titre" type="button" tabindex="" aria-label="Trier par titre" value="titre">Titre</button>
+                <li class="option" role="listbox">
+                  <button class="filter-button" id="titre" type="button"  aria-label="Trier par titre" value="titre">Titre</button>
                 </li>
               </ul>
             </div>
@@ -49,25 +50,26 @@
           </div>
         </div>
       </section>
+      <section class="works-container"></section>
     </main>
 
     <div id="contact_modal" aria-hidden="true" aria-modal="false" role="dialog" aria-describedby="modalTitle">
 			<div class="modal">
 				<header class="modal-header">
           <h2 id="modalTitle" class="modal-title">Contactez-moi <br> <span aria-label="Nom du photographe" class="form-name"></span></h2>
-          <button class="close-modal">
-            <img alt="fermer la modale" src="assets/icons/close.svg" onclick="closeModal()" />
+          <button class="close-modal" aria-label="Fermer la modale de contact">
+            <img alt="fermer la modale" aria-hidden="true" src="assets/icons/close.svg" onclick="closeModal()" />
           </button>
         </header>
         <form name="contact" action="index.html" method="get" onsubmit="return validate();">
 
           <div class="formData firstname" data-error="Entrez votre prénom" data-error-visible="false">
-            <label for="first">Prénom</label><br>
+            <label for="firstname">Prénom</label><br>
             <input class="text-control" type="text" id="firstname" name="firstname">
           </div>
 
           <div class="formData lastname" data-error="Entrez votre nom de famille" data-error-visible="false">
-            <label for="last">Nom</label><br>
+            <label for="lastname">Nom</label><br>
             <input class="text-control" type="text" id="lastname" name="lastname">
           </div>
 
@@ -87,19 +89,19 @@
       </div>
 		</div>
 
-    <div class="lightbox" aria-hidden="true" aria-modal="false" role="dialog">
+    <div class="lightbox" aria-hidden="true" aria-modal="false" role="dialog" aria-label="vue rapprochée de l'image">
       <div class="lightbox-container">
-        <button class="close-lightbox">
+        <button class="close-lightbox" role="button" aria-label="fermer la vue">
           <i class="fa-solid fa-xmark" aria-hidden="true"></i>
         </button>
-        <button class="previous-button">
+        <button class="previous-button" role="link" aria-label="Voir l'image précédente">
           <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
         </button>
         <div class="photo-container">
           <figure></figure>
           <figcaption></figcaption>
         </div>
-        <button class="next-button">
+        <button class="next-button" role="link" aria-label="Voir l'image suivante">
           <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
         </button>
       </div>

@@ -8,6 +8,7 @@ const data = dataPhotographers()
 
 // RECUPERATION DE LA SECTION PERMETTANT D'AFFICHER LES DONNEES
 const photographersSection = document.querySelector(".photographer-container");
+const idPhotographerSection = document.querySelector('.about-container')
 
 // RECUPERATION DE L'ID DU PHOTOGRAPHE PASSE EN PARAMETRE DANS L'URL
 let idParam = new URLSearchParams(document.location.search)
@@ -20,14 +21,12 @@ export const photographerMediaById = await data.getMediasByPhotographer(photogra
 // CREATION DE LA PARTIE IDENTITE DE LA PAGE PHOTOGRAPHE
 const photographer = photographerTemplate(photographerInfoById); //envoi + réception infos du photographe au template
 const photographerInfoDOM = photographer.getPhotographerInfo(); // récupération du composant selon fonction demandée
-photographersSection.appendChild(photographerInfoDOM); // affichage du composant sur la page
+idPhotographerSection.appendChild(photographerInfoDOM); // affichage du composant sur la page
 
 // CREATION DE LA PARTIE MEDIA DE LA PAGE PHOTOGRAPHE
 export const mediaTemplate = mediaFactory(photographerMediaById, photographerInfoById) //envoi des informations media à la factory + récupération du composant selon fonction demandée (tableau)
-export const section = document.createElement('section')
-section.classList.add('works-container')
-photographersSection.appendChild(section)
-mediaTemplate.forEach((media) => section.appendChild(media)) // affichage des composants sur la page photographe
+export const worksSection = document.querySelector('.works-container')
+mediaTemplate.forEach((media) => worksSection.appendChild(media)) // affichage des composants sur la page photographe
 
 //CREATION ENCART TOTAL LIKES + MISE A JOUR LIKES
 const likes = photographerTemplate(photographerInfoById, photographerMediaById)

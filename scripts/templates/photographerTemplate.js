@@ -46,8 +46,8 @@ export default function photographerTemplate(dataPhotographer, dataMedia) {
     
     function getPhotographerInfo() {
 
-        const container = document.createElement( 'section' )
-        container.classList.add('about-container')
+        const container = document.createElement('div')
+        container.classList.add('content')
 
         const txtContainer = document.createElement('div')
         txtContainer.classList.add('text-container')

@@ -2,13 +2,15 @@
 
 .about-container {
     background-color: #FAFAFA;
-    height: 300px;
+    height: 100%;
     margin: 0 100px;
+    padding: 50px;
+}
+
+.about-container .content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
-    padding: 50px;
 }
 
 .name-photographer {
@@ -56,22 +58,6 @@
     flex-direction: column;
 }
 
-.photographer-container .filter {
-    order: 2;
-}
-
-.photographer-container .about-container {
-    order: 1;
-}
-
-.photographer-container .works-container {
-    order: 3;
-}
-
-.photographer-container aside {
-    order: 4;
-}
-
 /***** SECTION FILTRES *****/
 .filter-title {
     font-weight: 700;
@@ -82,14 +68,6 @@
 .filter {
     display: flex;
     margin: 20px 100px;
-}
-
-.filter label {
-    font-size: 16px;
-    font-weight: 700;
-    margin-right: 25px;
-    display: flex;
-    align-items: center;
 }
 
 .dropdown-main-menu {
@@ -159,6 +137,7 @@
     padding: 0 5px;
     width: 170px;
     text-align: left;
+    border-top: 1px white solid;
 }
 
 /***** SECTION TRAVAUX PHOTOGRAPHE *****/
@@ -253,6 +232,7 @@ aside {
     right: 0;
     left: 0;
     background-color:rgba(255,255,255, 0.6);
+    z-index: 2000;
 }
 
 .modal {
@@ -351,6 +331,10 @@ form textarea {
     color: green;
 }
 
+.text-control.success-message {
+    border: 2px green solid;
+}
+
 
 /***** SECTION LIGHTBOX *****/
 
@@ -364,6 +348,7 @@ form textarea {
     left: 0;
     background-color:rgba(255,255,255, 0.6);
     justify-content: center;
+    z-index: 2000;
 }
 
 .lightbox-container {
