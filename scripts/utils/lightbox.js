@@ -1,5 +1,5 @@
 export default function lightboxTemplate(dataMedias, dataPhotographer) {
-    
+
     //DOM ELEMENTS
     const main                  = document.getElementById("main-photographer")
     const lightbox              = document.querySelector(".lightbox")
@@ -64,9 +64,10 @@ export default function lightboxTemplate(dataMedias, dataPhotographer) {
             `<video controls aria-label="${currentMedia.title}">
                 <source src="assets/images/${dataPhotographer.name}/${currentMedia.video}" type="video/mp4">
             </video>`}`;
+
         let title = `${currentMedia.title}`;
 
-        figure.innerHTML = content
+        figure.innerHTML = content 
         figcaption.textContent = title
         
         lightbox.style.display = 'flex'
