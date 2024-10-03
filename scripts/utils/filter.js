@@ -11,7 +11,6 @@ const dropdownContent = document.querySelector('.dropdown-content')
 const dropdownFilters = document.querySelectorAll('.dropdown-content button')
 let currentFilter     = document.querySelector('.current-filter')
 const allFilters      = Array.from(dropdownFilters)
-console.log(allFilters)
 
 
 dropdownBtn.addEventListener('click', expandFilter)

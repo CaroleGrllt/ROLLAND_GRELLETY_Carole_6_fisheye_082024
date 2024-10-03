@@ -67,7 +67,6 @@ export default function photographerTemplate(dataPhotographer, dataMedia) {
         line.textContent = dataPhotographer.tagline
 
         const btn = document.createElement('button')
-        btn.setAttribute('onclick', 'displayModal()')
         btn.setAttribute('aria-label', 'Ouvrir le formulaire de contact')
         btn.classList.add('contact_button')
         btn.textContent = "Contactez-moi"

@@ -1,22 +1,35 @@
-// DOM ELEMENTS
-const body           = document.getElementById("body")
-const main           = document.getElementById("main-photographer")
-const contactModal   = document.getElementById("contact_modal")
-const contactBtn     = document.querySelector(".contact_button")
-const closeBtn       = document.querySelector(".close-modal")
-const firstInput     = document.getElementById("firstname")
-const firstError     = document.querySelector(".firstname")
-const lastInput      = document.getElementById("lastname")
-const lastError      = document.querySelector(".lastname")
-const emailInput     = document.getElementById("email")
-const emailError     = document.querySelector(".email")
-const messageInput   = document.getElementById("message")
-const messageError   = document.querySelector(".message")
-const successMessage = document.querySelector(".success")
+document.addEventListener('DOMContentLoaded', () => {
+  const contactBtn     = document.querySelector(".contact_button")
+  console.log(contactBtn)
+
+
+  // DOM ELEMENTS
+  const main           = document.getElementById("main-photographer")
+  const contactModal   = document.getElementById("contact_modal")
+  const form           = document.querySelector('form')
+  const closeBtn       = document.querySelector(".close-modal")
+  const firstInput     = document.getElementById("firstname")
+  const firstError     = document.querySelector(".firstname")
+  const lastInput      = document.getElementById("lastname")
+  const lastError      = document.querySelector(".lastname")
+  const emailInput     = document.getElementById("email")
+  const emailError     = document.querySelector(".email")
+  const messageInput   = document.getElementById("message")
+  const messageError   = document.querySelector(".message")
+  const successMessage = document.querySelector(".success")
 
 
   //EVENTLISTENERS
+
+  //-----Submit event
+  form.addEventListener('submit', validate)
+
   //-----Click events
+
+  
+
+  closeBtn.addEventListener('click', closeModal)
+
   firstInput.addEventListener("change", function() {
     isValidInput(firstnameRegexp,firstInput,firstError);
   });
@@ -31,12 +44,17 @@ const successMessage = document.querySelector(".success")
   });
 
   //-----key events
-  closeBtn.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape' || e.key === 'Enter' || e.code === 'Space') {
-        closeModal()
-    }
+closeBtn.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape' || e.key === 'Enter' || e.code === 'Space') {
+      closeModal()
+  }
 })
 
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape') {
+      closeModal()
+  }
+})
 
 // FUNCTIONS
 //-----open modal
@@ -77,45 +95,49 @@ const emailRegexp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const textRegex = /\S/; //vérifie s'il y a au moins un caractère non blanc dans le textarea.
 
 function isValidInput(regex,input,error) {
-    if (!regex.test(input.value) || input ==="") {
-      error.setAttribute('data-error-visible', 'true')
-      return false;
-    } else {
-      error.setAttribute('data-error-visible', 'false')
-      input.classList.add('success-message')
-      return true;
-    }
+  if (!regex.test(input.value) || input ==="") {
+    error.setAttribute('data-error-visible', 'true')
+    return false;
+  } else {
+    error.setAttribute('data-error-visible', 'false')
+    input.classList.add('success-message')
+    return true;
   }
+}
 
-  function validate() {
-    const validFirstname   = isValidInput(firstnameRegexp,firstInput,firstError);
-    const validLastname    = isValidInput(lastnameRegexp,lastInput,lastError);
-    const validEmail       = isValidInput(emailRegexp,emailInput,emailError);
-    const validText        = isValidInput(textRegex,messageInput,messageError);
-  
+function validate() {
+  const validFirstname   = isValidInput(firstnameRegexp,firstInput,firstError);
+  const validLastname    = isValidInput(lastnameRegexp,lastInput,lastError);
+  const validEmail       = isValidInput(emailRegexp,emailInput,emailError);
+  const validText        = isValidInput(textRegex,messageInput,messageError);
 
-    function isValidForm() {
-        if(validFirstname && validLastname && validEmail && validText) {
-          return true
-        } else {
-          return false
-        }
-      }
 
-    const validForm = isValidForm();
-
-    if(validForm) {
-        console.log(
-            "Prénom : " + firstInput.value + " / ", 
-            "Nom : " + lastInput.value + " / ", 
-            "Email : " + emailInput.value + " / ", 
-            "Message : " + messageInput.value 
-        )
-
-        successMessage.innerHTML= '<p>Merci. Votre message a bien été envoyé. Vous pouvez fermer le formulaire. </p>'
-        event.preventDefault()
+  function isValidForm() {
+      if(validFirstname && validLastname && validEmail && validText) {
         return true
-    } else {
+      } else {
         return false
       }
+    }
+
+  const validForm = isValidForm();
+
+  if(!validForm) {
+    event.preventDefault()
+    return false
   }
+
+  else {
+      console.log(
+          "Prénom : " + firstInput.value + " / ", 
+          "Nom : " + lastInput.value + " / ", 
+          "Email : " + emailInput.value + " / ", 
+          "Message : " + messageInput.value 
+      )
+
+      successMessage.innerHTML= '<p>Merci. Votre message a bien été envoyé. Vous pouvez fermer le formulaire. </p>'
+      event.preventDefault()
+      return true
+  } 
+}
+})

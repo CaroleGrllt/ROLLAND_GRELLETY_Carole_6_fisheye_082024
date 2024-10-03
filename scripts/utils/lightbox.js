@@ -3,7 +3,6 @@ export default function lightboxTemplate(dataMedias, dataPhotographer) {
     //DOM ELEMENTS
     const main                  = document.getElementById("main-photographer")
     const lightbox              = document.querySelector(".lightbox")
-    const a = document.querySelector('.lightbox-container')
     const closeLightboxBtn      = document.querySelector('.close-lightbox')
     const previousButtons       = document.querySelector('.previous-button')
     const nextButtons           = document.querySelector('.next-button')
@@ -18,7 +17,6 @@ export default function lightboxTemplate(dataMedias, dataPhotographer) {
     //-----close lightbox
     function closeLightbox() {
         lightbox.style.display = 'none'
-
         lightbox.setAttribute('aria-hidden', 'true')
         lightbox.setAttribute('aria-modal', 'false')
         main.setAttribute('aria-hidden', 'false')

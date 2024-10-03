@@ -6,7 +6,6 @@ import photographerTemplate from '../templates/photographerTemplate.js'
     const photographersSection = document.querySelector(".photographer_section");
 
     let photographers = await data.getPhotographers()
-    // console.log(photographers)
 
     photographers.forEach((photographer) => {
         const photographerModel = photographerTemplate(photographer);
