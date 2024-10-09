@@ -70,7 +70,19 @@ export default function photographerTemplate(dataPhotographer, dataMedia) {
         btn.setAttribute('aria-label', 'Ouvrir le formulaire de contact')
         btn.classList.add('contact_button')
         btn.textContent = "Contactez-moi"
-        
+
+        btn.addEventListener('click', () => {
+            const main           = document.getElementById("main-photographer")
+            const contactModal   = document.getElementById("contact_modal")
+            const closeBtn       = document.querySelector(".close-modal")
+            
+            contactModal.style.display = "block";
+            contactModal.setAttribute('aria-hidden', 'false')
+            contactModal.setAttribute('aria-modal', 'true')
+            main.setAttribute('aria-hidden', 'true')
+            closeBtn.focus()
+        })
+
         const img = document.createElement( 'img' );
         img.setAttribute('aria-hidden', 'true')
         img.setAttribute("src", picture )

@@ -1,6 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const contactBtn     = document.querySelector(".contact_button")
-  console.log(contactBtn)
+
 
 
   // DOM ELEMENTS
@@ -25,8 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', validate)
 
   //-----Click events
-
-  
 
   closeBtn.addEventListener('click', closeModal)
 
@@ -57,14 +53,6 @@ document.addEventListener('keydown', (e) => {
 })
 
 // FUNCTIONS
-//-----open modal
-function displayModal() {
-	contactModal.style.display = "block";
-  contactModal.setAttribute('aria-hidden', 'false')
-  contactModal.setAttribute('aria-modal', 'true')
-  main.setAttribute('aria-hidden', 'true')
-  closeBtn.focus();
-}
 
 //-----clean form after closing/sending
 function clearInputs() {
@@ -140,4 +128,3 @@ function validate() {
       return true
   } 
 }
-})
