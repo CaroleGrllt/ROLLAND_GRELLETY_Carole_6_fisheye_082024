@@ -19,12 +19,12 @@ export const photographerInfoById = await data.getPhotographerInfo(photographerI
 export const photographerMediaById = await data.getMediasByPhotographer(photographerId)
 
 // CREATION DE LA PARTIE IDENTITE DE LA PAGE PHOTOGRAPHE
-const photographer =  photographerTemplate(photographerInfoById); //envoi + réception infos du photographe au template
-const photographerInfoDOM =  photographer.getPhotographerInfo(); // récupération du composant selon fonction demandée
+const photographer =  photographerTemplate(photographerInfoById); //envoi infos du photographe au template + réception dans const
+const photographerInfoDOM =  photographer.getPhotographerInfo(); // récupération du composant demandé
 idPhotographerSection.appendChild(photographerInfoDOM); // affichage du composant sur la page
 
 // CREATION DE LA PARTIE MEDIA DE LA PAGE PHOTOGRAPHE
-export const mediaTemplate = mediaFactory(photographerMediaById, photographerInfoById) //envoi des informations media à la factory + récupération du composant selon fonction demandée (tableau)
+export const mediaTemplate = mediaFactory(photographerMediaById, photographerInfoById) //envoi des informations media à la factory + récupération du composant (tableau)
 export const worksSection = document.querySelector('.works-container')
 mediaTemplate.forEach((media) => worksSection.appendChild(media)) // affichage des composants sur la page photographe
 

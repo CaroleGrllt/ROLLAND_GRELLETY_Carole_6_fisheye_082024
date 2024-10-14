@@ -1,6 +1,3 @@
-
-
-
   // DOM ELEMENTS
   const main           = document.getElementById("main-photographer")
   const contactModal   = document.getElementById("contact_modal")

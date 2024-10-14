@@ -1,5 +1,4 @@
 export default function photographerTemplate(dataPhotographer, dataMedia) {
-    // const { name, id, tagline, city, country, price, portrait } = data;
     const picture = `assets/photographers/${dataPhotographer.portrait}`;
 
     function getUserCardDOM() {
@@ -129,7 +128,5 @@ export default function photographerTemplate(dataPhotographer, dataMedia) {
         
         return (aside)
     }
-
-
     return { getUserCardDOM, getPhotographerInfo, displayAside }
 }

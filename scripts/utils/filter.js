@@ -41,7 +41,6 @@ function expandFilter() {
         mainMenu.style.borderRadius = '5px'
 
     }
-
     changeFilter()
 }
 

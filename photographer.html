@@ -16,7 +16,6 @@
         <img role="img" src="assets/icons/logo.png" class="logo" alt="Fisheye Home Page"/>
       </a>
     </header>
-
     <main id="main-photographer" aria-hidden="false" class="photographer-container">
       <section class="about-container"></section>
       <section class="filter">
@@ -52,7 +51,6 @@
       </section>
       <section class="works-container"></section>
     </main>
-
     <div id="contact_modal" aria-hidden="true" aria-modal="false" role="dialog" aria-describedby="modalTitle">
 			<div class="modal">
 				<header class="modal-header">
@@ -66,28 +64,23 @@
             <label for="firstname">Prénom</label><br>
             <input class="text-control" type="text" id="firstname" name="firstname">
           </div>
-
           <div class="formData lastname" data-error="Entrez votre nom de famille" data-error-visible="false">
             <label for="lastname">Nom</label><br>
             <input class="text-control" type="text" id="lastname" name="lastname">
           </div>
-
           <div class="formData email" data-error="Entrez une adresse email valide" data-error-visible="false">
             <label for="email">E-mail</label><br>
             <input class="text-control" type="email" id="email" name="email">
           </div>
-
           <div class="formData message" data-error="Entrez votre message" data-error-visible="false">
             <label for="message">Votre message</label><br>
             <textarea class="text-control" id="message" name="message" rows="10"></textarea>
           </div>
-
           <input class="btn-submit button" type="submit" value="Envoyer">
           <div class="success"></div>
         </form>
       </div>
 		</div>
-
     <div class="lightbox" aria-hidden="true" aria-modal="false" role="dialog" aria-label="vue rapprochée de l'image">
       <div class="lightbox-container">
         <button class="close-lightbox" role="button" aria-label="fermer la vue">
@@ -105,11 +98,9 @@
         </button>
       </div>
     </div>
-
     <script  src="/scripts/pages/photographer.js" defer type="module"></script>
     <script  src="/scripts/utils/likes.js" defer type="module"></script>
     <script  src="/scripts/utils/filter.js" defer type="module"></script>
     <script  src="/scripts/utils/contactForm.js" defer></script>
-
   </body>
 </html>
