@@ -70,6 +70,7 @@ export default function photographerTemplate(dataPhotographer, dataMedia) {
         btn.classList.add('contact_button')
         btn.textContent = "Contactez-moi"
 
+        // PERMET UN LISTENER SUR UN ELEMENT CREE DYNAMIQUEMENT
         btn.addEventListener('click', () => {
             const main           = document.getElementById("main-photographer")
             const contactModal   = document.getElementById("contact_modal")
