@@ -1,4 +1,4 @@
-const jsonUrl = 'http://127.0.0.1:5500/data/photographers.json';
+const jsonUrl = new URL('../../data/photographers.json', import.meta.url);
 
 export default function dataPhotographers() {
 

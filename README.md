@@ -1,6 +1,12 @@
-# Base de code du projet P6 - Parcours Front-end
+# FISHEYE
 
-## Démarrer le projet
+## Description
 
+
+## Prérequis
+Aucun prérequis
+
+## Installation et lancement
 Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.
+
 
