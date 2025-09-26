@@ -6,7 +6,7 @@ export default function photographerTemplate(dataPhotographer, dataMedia) {
 
         const link = document.createElement('a')
         link.setAttribute('aria-label', `visiter la page de ${dataPhotographer.name}`)
-        link.setAttribute('href', `../../photographer.html?id=${dataPhotographer.id}`)
+        link.setAttribute('href', `./photographer.html?id=${dataPhotographer.id}`)
 
         const img = document.createElement( 'img' );
         img.setAttribute('aria-hidden', 'true')
